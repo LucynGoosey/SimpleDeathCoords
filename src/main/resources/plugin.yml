@@ -1,0 +1,12 @@
+name: SimpleDeathCoordinates
+version: '${project.version}'
+main: me.lucyn.simpledeathcoordinates.SimpleDeathCoordinates
+api-version: 1.18
+authors: [ Lucyn ]
+description: A plugin made upon request to simply provide coordinates upon a players death.
+
+permissions:
+   simpledeathcoords.use:
+      description: Allows the player to use the command /simpledeathcoords
+      default: true
+
