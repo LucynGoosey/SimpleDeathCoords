@@ -1,7 +1,7 @@
 name: SimpleDeathCoordinates
 version: '${project.version}'
 main: me.lucyn.simpledeathcoordinates.SimpleDeathCoordinates
-api-version: 1.18
+api-version: 1.21
 authors: [ Lucyn ]
 description: A plugin made upon request to simply provide coordinates upon a players death.
 

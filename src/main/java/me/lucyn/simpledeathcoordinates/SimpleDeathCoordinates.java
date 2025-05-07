@@ -6,13 +6,10 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.logging.Logger;
-
 import static org.bukkit.World.Environment.*;
 
 public final class SimpleDeathCoordinates extends JavaPlugin implements Listener {
-public static JavaPlugin plugin;
-    @Override //used to override the onEnable and onDisable methods from JavaPlugin
+    @Override
     public void onEnable() {
         this.saveDefaultConfig(); // creates the config file
         getServer().getPluginManager().registerEvents(this, this); // registers the death listener
@@ -23,7 +20,7 @@ public static JavaPlugin plugin;
     @EventHandler
     public void onPlayerDeath(PlayerDeathEvent event) {
         Player player = event.getEntity(); //gets the player that died
-       // if(!player.hasPermission("simpledeathcoordinates.use")) return; //checks if the player has permission to use the plugin
+        if(!player.hasPermission("simpledeathcoordinates.use")) return; //checks if the player has permission to use the plugin
         String message = getConfig().getString("message"); //gets the message out of the config file
 
             message = message.replaceAll("%x%", String.valueOf(player.getLocation().getBlockX())); //replaces the placeholder with the x coordinate
